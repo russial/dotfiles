@@ -1,17 +1,20 @@
 set nocompatible 
 
 filetype plugin indent on
-
+set background=dark
+colorscheme solarized
 set backspace=indent,eol,start
 set showcmd
 set path+=**
 set wildmenu
 set nu
 set mouse=a
+set nowrap
+set display+=lastline
 syntax on
 
 set clipboard=unnamed
-
+set completeopt=longest,menuone,preview
 " go-vim plugin specific commands
 " Also run `goimports` on your current file on every save
 " Might be be slow on large codebases, if so, just comment it out
@@ -19,16 +22,16 @@ let g:go_fmt_command = "goimports"
 
 " Status line types/signatures.
 let g:go_auto_type_info = 1
-
 "au filetype go inoremap <buffer> . .<C-x><C-o>
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 
-" If you want to disable gofmt on save
-" let g:go_fmt_autosave = 0
-
-
+let NERDTreeShowHidden=1
 " NERDTree plugin specific commands
 :nnoremap <C-g> :NERDTreeToggle<CR>
 "autocmd vimenter * NERDTree
+let g:NERDTreeShowIgnoredStatus = 1
 
 " air-line plugin specific commands
 let g:airline_powerline_fonts = 1
@@ -60,3 +63,8 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
