@@ -1,0 +1,6 @@
+{
+    "diagnostic.signOffset": 9999999,
+    "go.goplsOptions": {
+        "completeUnimported": true
+    }
+}

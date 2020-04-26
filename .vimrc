@@ -3,6 +3,10 @@ set nocompatible
 filetype plugin indent on
 set background=dark
 colorscheme solarized
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set backspace=indent,eol,start
 set showcmd
 set path+=**
@@ -10,7 +14,9 @@ set wildmenu
 set nu
 set mouse=a
 set nowrap
+set signcolumn=yes
 set display+=lastline
+set updatetime=300
 syntax on
 
 set clipboard=unnamed
@@ -22,7 +28,7 @@ let g:go_fmt_command = "goimports"
 
 " Status line types/signatures.
 let g:go_auto_type_info = 1
-"au filetype go inoremap <buffer> . .<C-x><C-o>
+au filetype go inoremap <buffer> . .<C-x><C-o>
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
@@ -68,3 +74,11 @@ function! GitStatus()
   return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
+
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+:nnoremap <C-@> :FZF<CR> 
+
+
+" coc vim settings
+
