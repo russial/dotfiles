@@ -57,6 +57,8 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 # Install NERDTree-git plugin
 git clone https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/pack/dist/start/nerdtree-git-plugin
+# Install NERDCommenter plugin 
+git clone https://github.com/preservim/nerdcommenter.git ~/.vim/pack/dist/start/nerdcommenter 
 # Install vim-airline plugin
 git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 # Install vim-fugitive plugin

@@ -25,7 +25,7 @@ set completeopt=longest,menuone,preview
 " Also run `goimports` on your current file on every save
 " Might be be slow on large codebases, if so, just comment it out
 let g:go_fmt_command = "goimports"
-
+"let g:go_metalinter_autosave = 1
 " Status line types/signatures.
 let g:go_auto_type_info = 1
 au filetype go inoremap <buffer> . .<C-x><C-o>
@@ -78,7 +78,4 @@ set statusline+=%{GitStatus()}
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 :nnoremap <C-@> :FZF<CR> 
-
-
-" coc vim settings
 
